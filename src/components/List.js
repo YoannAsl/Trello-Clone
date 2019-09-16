@@ -6,7 +6,7 @@ const List = props => (
             <div className="header">Project Timeline</div>
         </div>
 
-        <ul>
+        <ul onClick={props.onClick}>
             {props.items.map((item, index) => <li key={index}>{item}</li>)}
         </ul>
     </div>

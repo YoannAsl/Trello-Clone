@@ -18,10 +18,11 @@ class App extends React.Component {
         }
     }
 
-    removeItem(item) {
-        console.log(item.target.value);
+    removeItem= e => {
+        this.setState({items: this.state.items.filter(item => item !== e.target.innerHTML)});
     }
-
+        
+    
     render() {
         return (
             <div>
@@ -31,7 +32,7 @@ class App extends React.Component {
                     </div>
                     <button className="ui button">Submit</button>
                 </form>
-                <List items={this.state.items} />
+                <List items={this.state.items} onClick={this.removeItem} />
             </div>
         );
     }
