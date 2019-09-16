@@ -10,12 +10,17 @@ class App extends React.Component {
     
     onSubmit = event => {
         event.preventDefault();
-        this.setState({
-            term: "",
-            items: [...this.state.items, this.state.term]
-        });
+        if (this.state.term !== "") {
+            this.setState({
+                term: "",
+                items: [...this.state.items, this.state.term]
+            }); 
+        }
     }
 
+    removeItem(item) {
+        console.log(item.target.value);
+    }
 
     render() {
         return (
